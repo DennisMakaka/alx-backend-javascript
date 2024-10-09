@@ -33,72 +33,186 @@ npm -v     # should output 6.11.3
 
 ## Tasks
 
-### 0. Initializing Project
-Create a GitHub repository with the following details:
-- Repository name: `holbertonschool-low_level_programming`
-- Description: "C programming project for Holberton School"
-- Create a README.md file with a description of the project.
+# Task 0: Basic list of objects
+## Description
+Create a function named `getListStudents` that returns an array of objects.  
+Each object should contain the following attributes:
+- `id` (Number)
+- `firstName` (String)
+- `location` (String)
+
+The array should contain the following students in order:
+- Guillaume, id: 1, in San Francisco
+- James, id: 2, in Columbia
+- Serena, id: 5, in San Francisco
+
+### Requirements
+- Function name: `getListStudents`
+- File: `0-get_list_students.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 1. Compilation and Printing
-Write a script that compiles a simple C program with the following requirements:
-- The C program should print "Hello, World" followed by a new line.
-- The script should save the output in an executable file called `hello`.
+# Task 1: More mapping
+## Description
+Create a function `getListStudentIds` that returns an array of ids from a list of student objects.  
+This function will take an array of objects (from `getListStudents`) as an argument.
+
+If the argument is not an array, the function should return an empty array.
+
+The function should use the `map` method to extract the `id` from each student object.
+
+### Requirements
+- Function name: `getListStudentIds`
+- File: `1-get_list_student_ids.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 2. Variables and Data Types
-Create a C program that declares and initializes the following types of variables:
-- `int`
-- `float`
-- `char`
-- Print the value of each variable on a new line.
+# Task 2: Filter
+## Description
+Create a function `getStudentsByLocation` that returns an array of objects for students located in a specific city.  
+The function should take two arguments:
+- A list of students (from `getListStudents`)
+- A city (String)
+
+Use the `filter` method to return an array of students who are located in the specified city.
+
+### Requirements
+- Function name: `getStudentsByLocation`
+- File: `2-get_students_by_loc.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 3. Basic Operators
-Write a C program that performs and prints the result of basic arithmetic operations (addition, subtraction, multiplication, division) using two `int` variables.
+# Task 3: Reduce
+## Description
+Create a function `getStudentIdsSum` that returns the sum of all student ids.  
+The function should accept a list of students (from `getListStudents`) as its parameter.  
+
+The function must use the `reduce` method to calculate the sum of all student ids.
+
+### Requirements
+- Function name: `getStudentIdsSum`
+- File: `3-get_ids_sum.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 4. Conditional Statements
-Write a C program that takes an integer input from the user and prints:
-- "Positive" if the number is greater than 0.
-- "Negative" if the number is less than 0.
-- "Zero" if the number is 0.
+# Task 4: Combine
+## Description
+Create a function `updateStudentGradeByCity` that returns an array of students for a specific city with their updated grade.  
+The function should take three parameters:
+1. A list of students (from `getListStudents`)
+2. A city (String)
+3. An array of grade objects, where each object contains:
+   - `studentId` (Number)
+   - `grade` (Number)
+
+If a student doesn't have a grade in the `newGrades` array, their grade should be set to `"N/A"`.  
+Use a combination of the `filter` and `map` methods to achieve this.
+
+### Requirements
+- Function name: `updateStudentGradeByCity`
+- File: `4-update_grade_by_city.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 5. Loops and Iteration
-Write a C program that prints numbers from 1 to 10 using a `for` loop. Each number should be printed on a new line.
+# Task 5: Typed Arrays
+## Description
+Create a function `createInt8TypedArray` that returns a new `ArrayBuffer` with an `Int8` value at a specific position.  
+The function should accept three arguments:
+- `length` (Number)
+- `position` (Number)
+- `value` (Number)
+
+If adding the value at the specified position is not possible, throw an error: `"Position outside range"`.
+
+### Requirements
+- Function name: `createInt8TypedArray`
+- File: `5-typed_arrays.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 6. Functions and Prototypes
-Write a C function `int add(int a, int b)` that takes two integers as input and returns their sum. Call this function from the `main` function and print the result.
+# Task 6: Set Data Structure
+## Description
+Create a function `setFromArray` that returns a `Set` from an array.  
+The function should accept a single argument: an array of any kind of elements.
+
+### Requirements
+- Function name: `setFromArray`
+- File: `6-set.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 7. Arrays and Pointers
-Write a C program that declares an array of 10 integers, assigns values to each element, and prints each value using a `for` loop.
+# Task 7: More Set Data Structure
+## Description
+Create a function `hasValuesFromArray` that returns `true` if all elements of an array exist within a `Set`.  
+The function should accept two arguments:
+1. A `Set`
+2. An array of values
+
+### Requirements
+- Function name: `hasValuesFromArray`
+- File: `7-has_array_values.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 8. String Manipulation
-Write a C function `void reverse_string(char *str)` that reverses a given string. Print the original and reversed string from the `main` function.
+# Task 8: Clean Set
+## Description
+Create a function `cleanSet` that returns a string of all the set values that start with a specific string (`startString`).  
+The function should accept two arguments:
+1. A `Set`
+2. A `startString`
+
+If a value starts with the specified `startString`, append the rest of the string to the result. The values in the resulting string should be separated by a hyphen (`-`).
+
+### Requirements
+- Function name: `cleanSet`
+- File: `8-clean_set.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 9. Dynamic Memory Allocation
-Write a C program that allocates memory for an array of 10 integers using `malloc`. Assign values to each element and print the values. Free the memory after use.
+# Task 9: Map Data Structure
+## Description
+Create a function `groceriesList` that returns a `Map` of groceries with the following items (name, quantity):
+- Apples: 10
+- Tomatoes: 10
+- Pasta: 1
+- Rice: 1
+- Banana: 5
+
+### Requirements
+- Function name: `groceriesList`
+- File: `9-groceries_list.js`
+- Directory: `0x03-ES6_data_manipulation`
 
 ---
 
-### 10. Structures
-Define a C structure `struct student` with the following fields:
-- `int id`
-- `char name[50]`
-- `float grade`
-Write a C program that declares a `struct student`, assigns values to the fields, and prints them.
+# Task 10: More Map Data Structure
+## Description
+Create a function `updateUniqueItems` that returns an updated map for all items with an initial quantity of 1.  
+It should accept a `Map` as an argument. The map for argument should be similar to the one created in the previous task.  
+For each entry in the map where the quantity is 1, update the quantity to 100. If the argument is not a `Map`, throw an error: `"Cannot process"`.
 
+### Requirements
+- Function name: `updateUniqueItems`
+- File: `10-update_uniq_items.js`
+- Directory: `0x03-ES6_data_manipulation`
+
+# Task 11: Weak link data structure
+## Advanced Task
+Create a `WeakMap` instance and export it as `weakMap`.  
+Then, export a function `queryAPI` that accepts an `endpoint` object with the following structure:
+
+```js
+{
+  protocol: 'http',
+  name: 'getUsers',
+}
+```
